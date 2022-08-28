@@ -1,5 +1,6 @@
 import React from 'react'
 import {useNavigate} from 'react-router-dom'
+import { appRoutes } from '../appRoutes';
 
 function ErrorPage() {
   let navigate = useNavigate();
@@ -12,7 +13,7 @@ function ErrorPage() {
         <button
           className="main--container--button"
           onClick={() => {
-            navigate("/");
+            navigate(appRoutes.homepage);
           }}
         >
           Back to Homepage

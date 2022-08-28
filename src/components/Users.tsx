@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getAllUsers } from "../api/api";
+import { appRoutes } from "../appRoutes";
 import UserIcon from "../usericon.png";
 
 export type UserType = {
@@ -22,7 +23,7 @@ function Users() {
 
   useEffect(() => {
     // Fetch users from json placeholder
-      getAllUsers()
+    getAllUsers()
       .then((json) => setUsers(json));
   }, []);
 
@@ -33,7 +34,7 @@ function Users() {
         <img alt="userIcon" src={UserIcon} />
         <p>{user.name}</p>
         <p>{user.email}</p>
-        <Link to={`/users-database/users/${user.id}`}>
+        <Link to={`${appRoutes.users}${user.id}`}>
           <button>Go to the user's profile.</button>
         </Link>
       </div>
@@ -47,7 +48,7 @@ function Users() {
         <button
           className="main--container--button"
           onClick={() => {
-            navigate("/users-database");
+            navigate(appRoutes.homepage);
           }}
         >
           Back to Homepage

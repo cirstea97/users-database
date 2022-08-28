@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { appRoutes } from "../appRoutes";
 
 function Homepage() {
   let navigate = useNavigate();
@@ -10,7 +11,7 @@ function Homepage() {
         <br />
         <button
           onClick={() => {
-            navigate("/users-database/users");
+            navigate(appRoutes.users);
           }}
         >
           Click to go to the users page

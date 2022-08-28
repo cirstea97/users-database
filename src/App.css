@@ -107,7 +107,7 @@ section::after {
     align-content: center;
     justify-content: center;
     align-items: center;
-    /* margin-top: 50px; */
+    margin-top: 50px;
     border-radius: 10px;
     backdrop-filter: blur(10px);
     transition: 0.5s;

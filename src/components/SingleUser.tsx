@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getUserById } from "../api/api";
+import { appRoutes } from "../appRoutes";
 import { UserType } from "./Users";
 
 function SingleUser() {
@@ -41,7 +42,7 @@ function SingleUser() {
             </div>
             <button
               onClick={() => {
-                navigate("/users-database/users");
+                navigate(appRoutes.users);
               }}
             >
               Go to users page

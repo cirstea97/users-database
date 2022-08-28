@@ -5,14 +5,15 @@ import Users from "./components/Users";
 import SingleUser from "./components/SingleUser";
 import ErrorPage from "./components/ErrorPage";
 import "./App.css";
+import {appRoutes} from './appRoutes'
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/users-database" element={<Homepage />} />
-        <Route path="/users-database/users" element={<Users />} />
-        <Route path="/users-database/users/:userId" element={<SingleUser />} />
+        <Route path={appRoutes.homepage} element={<Homepage />} />
+        <Route path={appRoutes.users} element={<Users />} />
+        <Route path={`${appRoutes.users}:userId`} element={<SingleUser />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
