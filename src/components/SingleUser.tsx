@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { getUserById } from "../api/api";
 import { UserType } from "./Users";
 
 function SingleUser() {
@@ -8,11 +9,11 @@ function SingleUser() {
   const [user, setUser] = useState<UserType>();
 
   useEffect(() => {
-    // Fetch single user from json placeholder
-    const singleUser = `https://jsonplaceholder.typicode.com/users/${params.userId}`;
-    fetch(singleUser)
-      .then((response) => response.json())
+        // Fetch single user from json placeholder
+    if (params.userId){
+      getUserById(params.userId)
       .then((json) => setUser(json));
+    }
   }, [params]);
 
   return (
@@ -40,7 +41,7 @@ function SingleUser() {
             </div>
             <button
               onClick={() => {
-                navigate("/users");
+                navigate("/users-database/users");
               }}
             >
               Go to users page

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { getAllUsers } from "../api/api";
 import UserIcon from "../usericon.png";
 
 export type UserType = {
@@ -21,8 +22,7 @@ function Users() {
 
   useEffect(() => {
     // Fetch users from json placeholder
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
+      getAllUsers()
       .then((json) => setUsers(json));
   }, []);
 
@@ -33,7 +33,7 @@ function Users() {
         <img alt="userIcon" src={UserIcon} />
         <p>{user.name}</p>
         <p>{user.email}</p>
-        <Link to={`/users/${user.id}`}>
+        <Link to={`/users-database/users/${user.id}`}>
           <button>Go to the user's profile.</button>
         </Link>
       </div>
@@ -47,20 +47,13 @@ function Users() {
         <button
           className="main--container--button"
           onClick={() => {
-            navigate("/");
+            navigate("/users-database");
           }}
         >
           Back to Homepage
         </button>
         <div className="container--users">
-          {usersArr[0]}
-          {usersArr[1]}
-          {usersArr[2]}
-        </div>
-        <div className="container--users">
-          {usersArr[3]}
-          {usersArr[4]}
-          {usersArr[5]}
+          {usersArr}
         </div>
       </div>
     </section>

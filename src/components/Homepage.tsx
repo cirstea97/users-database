@@ -10,7 +10,7 @@ function Homepage() {
         <br />
         <button
           onClick={() => {
-            navigate("/users");
+            navigate("/users-database/users");
           }}
         >
           Click to go to the users page
