@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getUserById } from "../api/api";
 import { appRoutes } from "../appRoutes";
-import { UserType } from "./Users";
+import { UserType } from "../types";
 
 function SingleUser() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const params = useParams();
   const [user, setUser] = useState<UserType>();
 

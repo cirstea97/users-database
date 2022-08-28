@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import { appRoutes } from '../appRoutes';
 
 function ErrorPage() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <section>
       <div className='container--error--page'>

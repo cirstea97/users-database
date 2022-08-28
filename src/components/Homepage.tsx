@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { appRoutes } from "../appRoutes";
 
 function Homepage() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <section>
       <div className="container--homepage">
